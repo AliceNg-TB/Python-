@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#fff}svg{max-width:100%;height:auto}</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="pythonBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4B8BBE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3776AB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pythonYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD43B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE873;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+    <style>
+      .title {
+        font-family: 'Helvetica Neue', Arial, 'Noto Sans CJK TC', 'Microsoft JhengHei', sans-serif;
+        font-size: 64px;
+        font-weight: 800;
+        fill: #1a1a1a;
+        text-anchor: middle;
+      }
+      .header {
+        font-family: 'Helvetica Neue', Arial, 'Noto Sans CJK TC', 'Microsoft JhengHei', sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        fill: #3776AB;
+        text-anchor: middle;
+      }
+      .row-text {
+        font-family: 'Helvetica Neue', Arial, 'Noto Sans CJK TC', 'Microsoft JhengHei', sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        fill: #222;
+        dominant-baseline: middle;
+      }
+      .row-python {
+        fill: url(#pythonBlue);
+        font-weight: 700;
+      }
+      .row-lib {
+        fill: #FFD43B;
+        font-weight: 700;
+        stroke: #E6B800;
+        stroke-width: 0.5px;
+        paint-order: stroke;
+      }
+      .row-app {
+        fill: #1a1a1a;
+      }
+      .card {
+        fill: #FFFFFF;
+        stroke: #E8EEF5;
+        stroke-width: 2;
+        rx: 16;
+        filter: url(#shadow);
+      }
+      .divider {
+        stroke: #3776AB;
+        stroke-width: 3;
+        opacity: 0.3;
+      }
+      @keyframes fadeSlide {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .anim {
+        opacity: 0;
+        animation: fadeSlide 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards;
+      }
+      .snake-path {
+        fill: none;
+        stroke: url(#pythonBlue);
+        stroke-width: 12;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 600;
+        stroke-dashoffset: 600;
+        animation: drawSnake 2s ease-out forwards;
+      }
+      .snake-path2 {
+        fill: none;
+        stroke: url(#pythonYellow);
+        stroke-width: 12;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 600;
+        stroke-dashoffset: 600;
+        animation: drawSnake 2s ease-out 0.3s forwards;
+      }
+      @keyframes drawSnake {
+        to { stroke-dashoffset: 0; }
+      }
+    </style>
+  </defs>
+  
+  <rect width="1200" height="1600" fill="#F7FAFC"/>
+  
+  <g class="anim" style="animation-delay:0s">
+    <g transform="translate(600,90)">
+      <path class="snake-path" d="M-80,20 C-90,-20 -50,-40 0,-35 C50,-40 90,-20 80,20 C70,50 20,55 -20,50 C-50,45 -70,30 -80,20"/>
+      <path class="snake-path2" d="M80,20 C90,60 50,80 0,75 C-50,80 -90,60 -80,20 C-70,-10 -20,-15 20,-10 C50,-5 70,5 80,20"/>
+      <circle cx="-30" cy="-10" r="4" fill="#FFD43B"/>
+      <circle cx="30" cy="-10" r="4" fill="#3776AB"/>
+    </g>
+    
+    <text x="600" y="210" class="title">🐍 Python：無所不能</text>
+    <text x="600" y="270" class="header">Python + 套件/工具 = 應用領域</text>
+    <line x1="200" y1="300" x2="1000" y2="300" class="divider"/>
+  </g>
+
+  <g transform="translate(100,340)">
+    <g class="anim" style="animation-delay:0.3s">
+      <rect x="0" y="0" width="1000" height="70" class="card"/>
+      <text x="40" y="35" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">Pandas</tspan> = <tspan class="row-app">資料操作與處理</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:0.6s">
+      <rect x="0" y="85" width="1000" height="70" class="card"/>
+      <text x="40" y="120" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">Scikit-learn</tspan> = <tspan class="row-app">機器學習</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:0.9s">
+      <rect x="0" y="170" width="1000" height="70" class="card"/>
+      <text x="40" y="205" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">TensorFlow</tspan> = <tspan class="row-app">深度學習</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:1.2s">
+      <rect x="0" y="255" width="1000" height="70" class="card"/>
+      <text x="40" y="290" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">Matplotlib</tspan> = <tspan class="row-app">資料視覺化</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:1.5s">
+      <rect x="0" y="340" width="1000" height="70" class="card"/>
+      <text x="40" y="375" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">Seaborn</tspan> = <tspan class="row-app">進階統計圖表</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:1.8s">
+      <rect x="0" y="425" width="1000" height="70" class="card"/>
+      <text x="40" y="460" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">BeautifulSoup</tspan> = <tspan class="row-app">網頁爬蟲</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:2.1s">
+      <rect x="0" y="510" width="1000" height="70" class="card"/>
+      <text x="40" y="545" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">Selenium</tspan> = <tspan class="row-app">瀏覽器自動化</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:2.4s">
+      <rect x="0" y="595" width="1000" height="70" class="card"/>
+      <text x="40" y="630" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">FastAPI</tspan> = <tspan class="row-app">高效能 API 開發</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:2.7s">
+      <rect x="0" y="680" width="1000" height="70" class="card"/>
+      <text x="40" y="715" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">SQLAlchemy</tspan> = <tspan class="row-app">資料庫存取與 ORM</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:3.0s">
+      <rect x="0" y="765" width="1000" height="70" class="card"/>
+      <text x="40" y="800" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">Flask</tspan> = <tspan class="row-app">輕量級網頁應用</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:3.3s">
+      <rect x="0" y="850" width="1000" height="70" class="card"/>
+      <text x="40" y="885" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">Django</tspan> = <tspan class="row-app">可擴展的大型平台</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:3.6s">
+      <rect x="0" y="935" width="1000" height="70" class="card"/>
+      <text x="40" y="970" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">OpenCV</tspan> = <tspan class="row-app">電腦視覺</tspan></text>
+    </g>
+    
+    <g class="anim" style="animation-delay:3.9s">
+      <rect x="0" y="1020" width="1000" height="70" class="card"/>
+      <text x="40" y="1055" class="row-text"><tspan class="row-python">Python</tspan> + <tspan class="row-lib">Pygame</tspan> = <tspan class="row-app">遊戲開發</tspan></text>
+    </g>
+  </g>
+  
+  <g class="anim" style="animation-delay:4.2s">
+    <line x1="200" y1="1480" x2="1000" y2="1480" class="divider"/>
+    <text x="600" y="1530" style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:22px;fill:#6B7C93;text-anchor:middle;">
+      13 個強大組合，一個語言搞定全端技術棧
+    </text>
+  </g>
+</svg>
+</body>
+</html>
